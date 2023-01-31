@@ -1,0 +1,135 @@
+/* Responsive 3-column preview card component */
+
+/* -----------------Google Fonts Start----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+/* -----------------Google Fonts End----------------- */
+
+/* -----------------Global Rules Start----------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body {
+    width:100%;
+    height: 100vh;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+/* -----------------Global Rules End----------------- */
+
+/* -----------------Card Rules Start----------------- */
+.wrapper {
+    width: 910px;
+    height: 510px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.wrapper .card {
+    width: 33.33%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.wrapper .card .image {
+    margin: 10px 0;
+}
+.wrapper .card .title {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.wrapper .card .info {
+    font-size: 15px;
+    color: #cfcfcf;
+    margin-bottom: 80px;
+}
+.wrapper .card .learn {
+    display: inline-block;
+    border: 1.5px solid #fff;
+    background-color: #fff;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: .5s ease-in-out;
+}
+
+.wrapper .card.sedan .learn {
+    color: #d78c03;
+}
+.wrapper .card.suv .learn {
+    color: #178080;
+}
+.wrapper .card.luxury .learn {
+    color: #193930;
+}
+.wrapper .card .learn:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.wrapper .card:first-child {
+    background-color: #d78c03;
+}
+
+.wrapper .card:nth-child(2) {
+    background-color: #178080;
+}
+
+.wrapper .card:last-child {
+    background-color: #193930;
+}
+/* -----------------Card Rules End----------------- */
+
+/* -----------------Responsive Rules Start----------------- */
+@media (max-width: 575px) {
+    body {
+        padding: 30px;
+        height: auto;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .wrapper .card {
+        width: 100%;
+    }
+
+    .wrapper .card:first-child {
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+    .wrapper .card:last-child {
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+}
+/* -----------------Responsive Rules End----------------- */
